@@ -11,15 +11,13 @@ const canvasHeight = canvas.height;
 
 // Визначення довжини сторін трикутника
 const sideLength = Math.min(canvasWidth, canvasHeight);
-console.log(sideLength)
-    // Визначення координат вершин трикутника
+// Визначення координат вершин трикутника
 const topX = canvasWidth / 2;
 const topY = (canvasHeight - sideLength * Math.sqrt(3) / 2) / 2;
 const bottomLeftX = (canvasWidth - sideLength) / 2;
 const bottomLeftY = topY + sideLength * Math.sqrt(3) / 2;
 const bottomRightX = (canvasWidth + sideLength) / 2;
 const bottomRightY = topY + sideLength * Math.sqrt(3) / 2;
-
 // Функція для малювання лінії за алгоритмом несиметричного ЦДА
 function drawLineCDA(x1, y1, x2, y2) {
     const dx = x2 - x1;
@@ -66,10 +64,10 @@ function drawLineBresenham(x1, y1, x2, y2) {
             err += dx;
             y1 += sy;
         }
-        //  console.log(x1 + " === " + x2 + " && " + y1 + " === " + y2)
 
     }
 }
+
 
 // Малюємо бічні сторони трикутника червоними лініями (алгоритм Брезенхема)
 drawLineBresenham(bottomLeftX, bottomLeftY, topX, topY);
